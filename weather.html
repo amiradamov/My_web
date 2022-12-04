@@ -26,9 +26,9 @@
 				<a href="contact.html" style="text-decoration: none;"> <p class="head">Contact me</p></a>
 			</div>
 
-			<div id="education" class="cattegory">
+			<!-- <div id="education" class="cattegory">
 				<a href="education.html" style="text-decoration: none;"><p class="head">Education Inofrmation</p></a>
-			</div>
+			</div> -->
 
 			<div id="weather" class="cattegory" style="background-color: rgb(255, 210, 0)">
 				<a href="weather.html"><img src="https://cdn.iconscout.com/icon/free/png-256/weather-rain-forecast-cloud-clouds-cloudy-sun-15484.png" alt="" width="50px" height="50px"></a>
@@ -104,7 +104,7 @@
             </div>
             <hr class = "line">
 
-            <div class="mypanel"></div>
+            <h3 class="mypanel" style="margin-left: 20px;"></h3>
               
             <div class="weather_info">
             </div>   
@@ -187,10 +187,7 @@ const app = {
     },
     showWeather: (resp, resp1) => {
         console.log(resp);
-        // console.log(resp1);
-        // let row1 = document.querySelector('.weather_info');
-        // const city_row1 = JSON.parse(resp);
-        // document.getElementById("example1").innerHTML = city_row1.name;
+        $.getJSON(`https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${key}&units=${units}&lang=${lang}`, function(data) {var text = `City: ${data.city.name}<br>`;$(".mypanel").html(text);});
         let row = document.querySelector('.weather_info');
         row.innerHTML = resp.daily.map((day, idx) => {
           
