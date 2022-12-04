@@ -291,10 +291,16 @@ input[type=submit] {
     width: 30%;
     background-color: #333;
     border-radius: 15px;
-    float: left;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 15px;
+    padding: 0;
   }
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  .card_title{
+    padding: 2px 16px;
   }
   .card_container{
     padding: 2px 16px;
